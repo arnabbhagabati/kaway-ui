@@ -9,6 +9,7 @@ import { useContext } from 'react';
 import MultiBtn from '../../graph-dur-selector/graph-dur-selector';
 import {addToMap, removeFromMap} from '../../../util';
 import Typography from '@mui/material/Typography';
+import Checkbox from '@mui/material/Checkbox';
 
 
 export const ChartComponent = props => {
@@ -126,6 +127,20 @@ export const ChartComponent = props => {
 		[graphSelDuration,ctxDuration,selectedSecs,props.gdata]
 	);	
 
+
+	const handleToggle = (value) => () => {
+    console.log('value in selected-list handleToggle'+JSON.stringify(value));   
+
+         setSelectedSecs(current =>
+            current.filter(sec => {            
+              return (sec.id !== value);
+            }),
+         ); 
+          
+    console.log('selectedSecs after delete in selected-list '+JSON.stringify(selectedSecs));
+    
+  	};
+
 	return (
 		<div>
 			<div class="graph-header">			
@@ -134,6 +149,7 @@ export const ChartComponent = props => {
 				</div>   
 				<Typography variant="h6" component="div" sx={{ flexGrow: 1 }}></Typography>
 				<MultiBtn  graphDur={graphSelDuration} setGraphDur={setGraphSelDuration} setGraphSelFlag={setGraphSelFlag}/>	
+				<Checkbox edge="end" onChange={handleToggle(props.security.id)} checked={true} inputProps={{ 'aria-labelledby': `basicgraph-checkbox-${props.security.id}` }} />
 			</div>		
 			<div id="chart-container"
 				ref={chartContainerRef}
