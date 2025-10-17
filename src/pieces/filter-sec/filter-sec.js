@@ -58,6 +58,7 @@ export default function FilterSecurity() {
         <MenuItem value='ALL'>ALL</MenuItem>
         <MenuItem value='STABLE_9_MON'>STABLE_9_MON</MenuItem>
         <MenuItem value='UNDERVALUED'>UNDERVALUED</MenuItem>
+        <MenuItem value='ALWAYS_INCR'>ALWAYS_INCR</MenuItem>
         <MenuItem value='BOTH'>BOTH</MenuItem>
     </Select>
     </div>
