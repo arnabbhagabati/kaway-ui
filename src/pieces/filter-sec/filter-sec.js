@@ -59,7 +59,7 @@ export default function FilterSecurity() {
         <MenuItem value='STABLE_9_MON'>STABLE_9_MON</MenuItem>
         <MenuItem value='UNDERVALUED'>UNDERVALUED</MenuItem>
         <MenuItem value='ALWAYS_INCR'>ALWAYS_INCR</MenuItem>
-        <MenuItem value='BOTH'>BOTH</MenuItem>
+        <MenuItem value='OFFSET_COVID_SPIKE'>OFFSET_COVID_SPIKE</MenuItem>
     </Select>
     </div>
   );
